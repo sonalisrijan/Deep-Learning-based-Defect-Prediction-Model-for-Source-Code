@@ -24,8 +24,8 @@ with open('data/x_valid.pickle', 'rb') as handle:
     X_valid = pickle.load(handle)
 with open('data/vocab_set.pickle', 'rb') as handle:
     vocabulary_set = pickle.load(handle)
-X_train = X_train[:50000]
-Y_train = Y_train[:50000]
+X_train = X_train[:100000]
+Y_train = Y_train[:100000]
 X_test = X_test[:25000]
 Y_test = Y_test[:25000]
 X_valid = X_valid[:25000]
@@ -84,7 +84,7 @@ checkpointer = ModelCheckpoint('data/models/model-{epoch:02d}-{val_loss:.5f}.hdf
 callback_list = [checkpointer] #, , reduce_lr
 his1 = model.fit_generator(
                     generator=train_gen,
-                    epochs=1,
+                    epochs=2,
                     validation_data=valid_gen,
                     callbacks=callback_list)
                     
