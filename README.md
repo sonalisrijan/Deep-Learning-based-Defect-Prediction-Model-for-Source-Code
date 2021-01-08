@@ -13,6 +13,6 @@ BERT is a trained transformer encoder stack that applies bidirectional (rather n
 The HuggingFace is an open-source community that has made available architectures from NLP in its Transformers library (includes BERT as well). We used HuggingFace transformers library to use BERT in our project while using the Pytorch framework (link: https://huggingface.co/transformers/model_doc/bert.html).
 
 The BERT model we use has 4 attention heads, and 2 transformer layers (blocks). Along with the preprocessed tokens, we also made use of:
->> positional embeddings (0,1..1000): Conveys index of word/token
->> token types (0,1,2): Conveys type of token: 0 if token lies before <START>; 1 if token is between <START> and <END>; 2 if token is after <END>
->> attention mask (1/0) to convey: Conveys where padding has been done
+1. positional embeddings (0,1..1000): Conveys index of word/token
+2. token types (0,1,2): Conveys type of token: 0 if token lies before <START>; 1 if token is between <START> and <END>; 2 if token is after <END>
+3. attention mask (1/0) to convey: Conveys where padding has been done
